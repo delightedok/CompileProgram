@@ -12,6 +12,7 @@ public final class TreeNode {
 	
 	public WordInfo root = new WordInfo();
 	
+	
 	public List<TreeNode> child = new ArrayList<TreeNode>();
 	
 	public void add(WordInfo wi){
