@@ -283,7 +283,11 @@ public class AnalysisTree {
 						return result;
 					}
 				}
+				if(WordInfo.OP_LEFTBACKET == wi.getToken()){
+					wi = token.getToken();
+				}
 				Result re1=form3(wi);
+				token.getToken();
 				if(re1.result==Result.RESULT_TRUE){
 					result.tree.child.add(re1.tree);
 					return result;

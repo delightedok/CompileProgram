@@ -180,7 +180,7 @@ public class Analysis {
 		return RESULT_FALSE;
 	}
 
-	/*form0 -> predicate(term{,term})|digit op_compare digit -> predicate(term{,term})|digit{ op_compare digit}*/
+	/*form0 -> predicate(term{,term})|digit op_compare digit -> predicate(term{,term})|digit op_compare digit*/
 	private int form0(WordInfo wi){
 		switch(wi.getToken()){
 			case WordInfo.PREDICATE:
@@ -211,7 +211,7 @@ public class Analysis {
 				}
 			case WordInfo.DIGITS:
 				wi=token.getToken();
-				while(wi.getToken()==WordInfo.OP_COMPARE){
+				if(wi.getToken()==WordInfo.OP_COMPARE){
 					wi=token.getToken();
 					if(match(wi.getToken(),WordInfo.DIGITS)==true){
 						wi=token.getToken();
@@ -225,7 +225,7 @@ public class Analysis {
 		return RESULT_FALSE;
 	}
 
-	/*form1 -> op_quantifer variable {op_quantifer variable} form3|(form0)|~from0|form0*/
+	/*form1 -> op_quantifer variable {op_quantifer variable} (form3)|(form0)|~from0|form0*/
 	private int form1(WordInfo wi){
 		switch(wi.getToken()){
 		case WordInfo.OP_NEGATION:

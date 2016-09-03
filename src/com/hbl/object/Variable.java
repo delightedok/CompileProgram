@@ -37,4 +37,12 @@ public final class Variable {
 		this.valRange.addAll(valRange);
 		return valRange;
 	}
+	
+	public List<Integer> getValRange(){
+		return valRange;
+	}
+	
+	public String toString(){
+		return varName;
+	}
 }
